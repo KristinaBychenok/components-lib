@@ -3,12 +3,23 @@ import { Header } from '../components/header/header'
 import { Wrapper } from '../components/layout/wrapper'
 import { ComponentsWrapper } from '../components/layout/componentsWrapper'
 
+const listOfTags: string[] = [
+  'React',
+  'Redux',
+  'Next.js',
+  'Tailwind',
+  'JavaScript',
+  'CSS',
+  'Node.js',
+  'Jest',
+]
+
 // Add here new components data
 const componentsLib = [
   {
     id: '1',
     name: 'Dynamic Input',
-    component: <DynamicInput />,
+    component: <DynamicInput listOfTags={listOfTags} />,
   },
 ]
 

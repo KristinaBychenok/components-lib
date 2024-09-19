@@ -24,8 +24,8 @@ export const TagButton = ({
 
   return (
     <div
-      className={`flex items-center justify-center w-fit h-12 cursor-pointer bg-slate-400 m-2 rounded-md py-1 px-2 ${
-        isDelete ? '' : 'hover:bg-slate-500'
+      className={`flex items-center justify-center w-fit h-12 bg-slate-400 m-2 rounded-md py-1 px-2 ${
+        isDelete ? '' : 'hover:bg-slate-500 cursor-pointer'
       }`}
     >
       <button key={tag} onClick={handleClick}>
@@ -33,7 +33,7 @@ export const TagButton = ({
       </button>
       {isDelete && (
         <div
-          className="flex w-fit h-fit items-center justify-center p-1 mx-1 hover:bg-slate-500 rounded-md"
+          className="flex w-fit h-fit items-center justify-center p-1 mx-1 hover:bg-slate-500 rounded-md cursor-pointer"
           onClick={handleDelete}
         >
           <DeleteIcon />

@@ -9,13 +9,13 @@ export const getTransformedInput = (
   let result: InputItemType[] = []
 
   // Transform different strings into one
-  console.log(inputItems)
   inputItems.map((item) => {
     if (typeof item === 'string') {
       strings.push(item)
     } else {
       const joinedString = strings.length > 0 ? strings.join(' ') : ''
       result = [...result, ...(!!joinedString ? [joinedString] : []), item]
+
       strings = []
     }
   })

@@ -28,14 +28,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       if (inputRef.current && mirrorRef.current) {
         mirrorRef.current.textContent =
           inputRef.current.value || inputRef.current.placeholder || ''
-        inputRef.current.style.width = `${mirrorRef.current.offsetWidth + 20}px`
+        inputRef.current.style.width = `${mirrorRef.current.offsetWidth + 5}px`
       }
     }, [value, placeholder])
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Backspace') {
         if (onBackspace) {
-          onBackspace() // Trigger the effect when Backspace is pressed
+          onBackspace()
         }
       }
     }
@@ -49,7 +49,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           placeholder={placeholder}
           onChange={handleChangeInput}
           onKeyDown={handleKeyDown}
-          className="px-2 border-none focus-visible:border-none focus-visible:outline-none my-2 h-12 py-1 w-auto min-w-[100px] box-content"
+          className="px-2 border-none focus-visible:border-none focus-visible:outline-none my-2 h-12 py-1 w-fit box-content"
         />
         <span
           ref={mirrorRef}
@@ -57,9 +57,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             visibility: 'hidden',
             position: 'absolute',
             whiteSpace: 'pre',
-            fontSize: 'inherit', // Match the font size of the input
-            fontFamily: 'inherit', // Match the font family of the input
-            padding: '0 2px', // Match input padding
+            fontSize: 'inherit',
+            fontFamily: 'inherit',
+            padding: '0 2px',
           }}
         >
           {value || placeholder}

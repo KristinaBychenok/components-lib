@@ -1,5 +1,6 @@
 import { PropsWithChildren } from 'react'
 import localFont from 'next/font/local'
+import Head from 'next/head'
 
 const geistSans = localFont({
   src: '../../pages/fonts/GeistVF.woff',
@@ -14,10 +15,17 @@ const geistMono = localFont({
 
 export const Wrapper = ({ children }: PropsWithChildren) => {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} h-screen mx-auto`}
-    >
-      {children}
-    </div>
+    <>
+      <Head>
+        <title>Components Library</title>
+        <meta name="description" content="Library with components" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <div
+        className={`${geistSans.variable} ${geistMono.variable} h-screen mx-auto`}
+      >
+        {children}
+      </div>
+    </>
   )
 }
